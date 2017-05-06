@@ -24,7 +24,7 @@ class MeteorologistController < ApplicationController
     @longitude = parsed_data["results"][0]["geometry"]["location"]["lng"]
 
     place= (@latitude.to_s) +","+ (@longitude.to_s)
-    d = "https://api.darksky.net/forecast/d6e3a2391ce16212480c5ce06cc44ee5/"+place
+    
     url = "https://api.darksky.net/forecast/d6e3a2391ce16212480c5ce06cc44ee5/"+place
     parsed_data = JSON.parse(open(url).read)
 
